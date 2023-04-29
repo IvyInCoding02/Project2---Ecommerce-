@@ -6,7 +6,7 @@ const SingleProductCard = () => {
         <div className={styles.card}>
             <div className={styles.wrapper}>
                 <div className={styles["img-wrapper"]}>
-                    <img src={img} alt="" />
+                    <img src={'img'} alt="" />
                 </div>
                 <div className={styles.info}>
                     <h1 className={styles.title}>Test Title</h1>

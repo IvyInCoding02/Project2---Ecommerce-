@@ -4,8 +4,8 @@ import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 const ContactPage = () => {
     return (
         <div>
-            <Breadcrumbs  />
-            <Feedback />
+            {/* <Breadcrumbs  />
+            <Feedback /> */}
         </div>
     );
 };
