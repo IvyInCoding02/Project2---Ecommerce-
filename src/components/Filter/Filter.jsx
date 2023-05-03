@@ -1,7 +1,8 @@
-import React from 'react';
-import styles from './filter.module.css'
+import React, { useState } from 'react';
+import styles from './filter.module.css';
 
-const Filter = () => {
+const Filter = ({setSorted,sorted}) => {
+
     return (
         <div className={styles.filter}>
             <div className={styles.wrapper}>
@@ -19,7 +20,7 @@ const Filter = () => {
                     </p>
                     <p>
                         Sort by 
-                        <select>
+                        <select onChange={e => setSorted(e.target.value)} value={sorted}>
                             <option value="newest">Newest</option>
                             <option value="price">Price</option>
                         </select>

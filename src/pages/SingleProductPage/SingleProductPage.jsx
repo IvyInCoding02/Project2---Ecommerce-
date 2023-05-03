@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SingleProductCard from '../../components/SingleProductCard/SingleProductCard';
 
 const SingleProductPage = () => {
     return (
         <div>
-            <SingleProductCard/>
+            <SingleProductCard
+            />
         </div>
     );
 };
