@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './filter.module.css';
 
-const Filter = ({setSorted,sorted}) => {
+const Filter = ({setSorted,sorted, setGridView}) => {
 
     return (
         <div className={styles.filter}>
@@ -9,8 +9,8 @@ const Filter = ({setSorted,sorted}) => {
                 <div className={styles["icon-wrapper"]}>
                     <img src="/images/filter-icon.png" alt="" />
                     <p className={styles["filter-text"]}>Filter</p>
-                    <img src="/images/grid-view-icon.png" alt="" />
-                    <img src="/images/list-view-icon.png" alt="" />
+                    <img src="/images/grid-view-icon.png" alt="" onClick={() => setGridView(true)}/>
+                    <img src="/images/list-view-icon.png" alt="" onClick={() => setGridView(false)}/>
                     <p className={styles["amount-text"]}>Showing 1-16 of 32 results</p>
                 </div>
                 <div className={styles.controls}>
@@ -21,8 +21,10 @@ const Filter = ({setSorted,sorted}) => {
                     <p>
                         Sort by 
                         <select onChange={e => setSorted(e.target.value)} value={sorted}>
-                            <option value="newest">Newest</option>
-                            <option value="price">Price</option>
+                            <option value="newestAsc">Oldest</option>
+                            <option value="priceAsc">LowPrice</option>
+                            <option value="newestDesc">Newest</option>
+                            <option value="priceDesc">HighPrice</option>
                         </select>
                     </p>    
                 </div>    

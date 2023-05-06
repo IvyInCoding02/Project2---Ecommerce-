@@ -3,8 +3,8 @@ import styles from './product.module.css';
 import { Link } from 'react-router-dom';
 
 
-const Product = ({ title, img, price, date, id}) => {
-    const gridView = true
+const Product = ({ title, img, price, date, id, gridView}) => {
+   
     return (
         <div className={gridView ? styles.card : styles["card-list"]}>
             <Link to={ `/product/${id}`}><img src={img} alt="img" className={styles.img} /></Link>
