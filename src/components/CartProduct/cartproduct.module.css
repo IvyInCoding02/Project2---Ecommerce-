@@ -7,3 +7,20 @@
 .wrapper * {
     width: calc(100% / 6 - 20px);
 }
+
+button{
+    border-radius: 30px;
+}
+
+.quantityWrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.quantityBtn{
+    display: block;
+    border: none;
+    background: none;
+    font-size: 18px;
+}

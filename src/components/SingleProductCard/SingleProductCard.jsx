@@ -4,11 +4,17 @@ import productService from '../../services/products';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { addToCart } from '../../redux/cardSlice';
+import { useDispatch } from 'react-redux';
 
 
 const SingleProductCard = () => {
   const [singleProduct, setSingleProduct] = useState({});
   const { id } = useParams();
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
+
 
   useEffect(() => {
     productService
@@ -30,11 +36,11 @@ const SingleProductCard = () => {
           <p className={styles.descr}>{singleProduct.descr}</p>
           <div className={styles["control-wrapper"]}>
             <div className={styles.quantity}>
-              <button className={styles["quantity-control"]}>-</button>
-              <span>1</span>
-              <button className={styles["quantity-control"]}>+</button>
+              <button className={styles["quantity-control"]} onClick={() => quantity > 1 && setQuantity(quantity -1)}>-</button>
+              <span>{quantity}</span>
+              <button className={styles["quantity-control"]} onClick={() => setQuantity(quantity + 1)}>+</button>
             </div>
-            <button className={styles.add}>Add To Cart</button>
+            <button className={styles.add} onClick={() => dispatch(addToCart({...singleProduct, quantity}))}>Add To Cart</button>
           </div>
         </div>
       </div>
